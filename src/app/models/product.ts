@@ -3,9 +3,10 @@ import { Category } from "./category";
 export class Product {
     id: number;
     name: string;
-    category: Category;
-    quantity: number;
+    image:string;
+    categoryId: number;
+    description : string;
     price: number;
-    picture: string;
-    description: string
-}
+    brand:string;
+    promotion : number;
+   }

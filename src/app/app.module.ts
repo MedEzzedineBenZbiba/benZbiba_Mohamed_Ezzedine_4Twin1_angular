@@ -9,6 +9,9 @@ import { FormsModule } from '@angular/forms';
 import { ListCategoriesComponentComponent } from './list-categories-component/list-categories-component.component';
 import { ShowValInclusChPipe } from './show-val-inclus-ch.pipe';
 import { HighlightDirectiveDirective } from './highlight-directive.directive';
+import { AppRoutingModule } from './app-routing.module';
+import { NotFoundPageComponent } from './not-found-page/not-found-page.component';
+import { ProductsCategoryComponent } from './products-category/products-category.component';
 
 
 
@@ -21,11 +24,14 @@ import { HighlightDirectiveDirective } from './highlight-directive.directive';
     ListCategoriesComponentComponent,
     ShowValInclusChPipe,
     HighlightDirectiveDirective,
+    NotFoundPageComponent,
+    ProductsCategoryComponent,
   ],
 
   imports: [
     BrowserModule,
-    FormsModule
+    FormsModule,
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent, HeaderComponent]

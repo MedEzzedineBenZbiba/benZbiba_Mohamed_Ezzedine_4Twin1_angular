@@ -6,7 +6,7 @@
         <ng-container *ngFor="let category of categories | showValInclusCh : title">
             <div  class="col-md-4" style="margin-bottom: 20px;" appHighlightDirective>
             <!-- <div *ngIf="!title || category.title.toLowerCase().includes(title.toLowerCase())" class="col-md-4" style="margin-bottom: 20px;"> -->
-                <img (click)="showDescription(category.description)" src={{category.image}} alt="{{category.title}}" class="img-fluid h-50 w-75">
+                <img (click)="showDescription(category.description)" [src]="category.image" [alt]="category.title" class="img-fluid h-50 w-75">
                 <h3>{{category.title | uppercase }}</h3>
                 <button class="btn btn-primary" *ngIf="category.available"> voir produits </button>
                 <span *ngIf="!category.available"> Catégorie non disponible </span>
