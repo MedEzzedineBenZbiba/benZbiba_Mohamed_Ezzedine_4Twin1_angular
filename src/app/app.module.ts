@@ -12,6 +12,8 @@ import { HighlightDirectiveDirective } from './highlight-directive.directive';
 import { AppRoutingModule } from './app-routing.module';
 import { NotFoundPageComponent } from './not-found-page/not-found-page.component';
 import { ProductsCategoryComponent } from './products-category/products-category.component';
+import { ProductsCategoryQPComponentComponent } from './products-category-qpcomponent/products-category-qpcomponent.component';
+import { DetailsCategoryComponentComponent } from './details-category-component/details-category-component.component';
 
 
 
@@ -26,6 +28,8 @@ import { ProductsCategoryComponent } from './products-category/products-category
     HighlightDirectiveDirective,
     NotFoundPageComponent,
     ProductsCategoryComponent,
+    ProductsCategoryQPComponentComponent,
+    DetailsCategoryComponentComponent,
   ],
 
   imports: [

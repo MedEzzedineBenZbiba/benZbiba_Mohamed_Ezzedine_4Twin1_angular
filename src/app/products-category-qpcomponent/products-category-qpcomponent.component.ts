@@ -1,13 +1,13 @@
 import { Component } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
 import { Product } from '../models/product';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
-  selector: 'app-products-category',
-  templateUrl: './products-category.component.html',
-  styleUrls: ['./products-category.component.css']
+  selector: 'app-products-category-qpcomponent',
+  templateUrl: './products-category-qpcomponent.component.html',
+  styleUrls: ['./products-category-qpcomponent.component.css']
 })
-export class ProductsCategoryComponent {
+export class ProductsCategoryQPComponentComponent {
   id: number ;
   listProducts : Product[]=[
     {"id":1, "name":"Refrigérateur LG Inox","image":"assets/images/refrigerateur-lg.jpg","categoryId":1, "description":"","price":2800,"brand":"LG","promotion":0},
@@ -17,16 +17,19 @@ export class ProductsCategoryComponent {
     {"id":5, "name":"Hachoir", "image":"assets/images/hachoir.jpg","categoryId":2, "description":"","price":120,"brand":"Moulinex", "promotion":0},
     {"id":6, "name":"TV 50'' LG","image":"assets/images/tv_lg.jpg","categoryId":5, "description":"", "price":1800,"brand":"LG","promotion":0},
   ]
-  constructor( private ac : ActivatedRoute) { }
-
-  list : Product[]=[];
-  ngOnInit(){
-    this.ac.paramMap.subscribe(res=>{this.id=Number(res.get('id'));
-    for(let p of this.listProducts){
-     if (p.categoryId == this.id){
-      this.list.push(p);
-     }
-  }})
+  constructor(private ac : ActivatedRoute){
   }
-  
+
+  listProductByIdCategory : Product[] = []
+  ngOnInit(){
+    this.ac.queryParams.subscribe(params => {
+      this.id = params['id'];
+      for(let p of this.listProducts){
+        if(p.categoryId == this.id)
+          this.listProductByIdCategory.push(p);
+      }
+
+    })
+  }
+
 }
