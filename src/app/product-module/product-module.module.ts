@@ -5,18 +5,22 @@ import { ProductModuleRoutingModule } from './product-module-routing.module';
 import { ProductComponentComponent } from './product-component/product-component.component';
 import { ProductsCategoryComponent } from './products-category/products-category.component';
 import { ProductsCategoryQPComponentComponent } from './products-category-qpcomponent/products-category-qpcomponent.component';
+import { FormProductComponenComponent } from './form-product-componen/form-product-componen.component';
+import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
   declarations: [
     ProductComponentComponent,
     ProductComponentComponent,
-    ProductsCategoryQPComponentComponent
+    ProductsCategoryQPComponentComponent,
+    FormProductComponenComponent
 
   ],
   imports: [
     CommonModule,
-    ProductModuleRoutingModule
+    ProductModuleRoutingModule,
+    FormsModule
   ]
 })
 export class ProductModuleModule { }

@@ -31,8 +31,6 @@ import { ProviderModuleModule } from './provider-module/provider-module.module';
     HighlightDirectiveDirective,
     NotFoundPageComponent,
     DetailsCategoryComponentComponent,
-
- 
   ],
 
   imports: [

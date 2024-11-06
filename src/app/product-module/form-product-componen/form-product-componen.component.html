@@ -1,0 +1,74 @@
+<form #f="ngForm" (ngSubmit)="save()">
+    <label for="name">Name</label>
+    <input
+      id="name"
+      minlength="5"
+      pattern="[a-zA-Z]+"
+      required
+      [(ngModel)]="product.name"
+      name="name"
+      #name="ngModel"
+    />
+    <div *ngIf="name.invalid && name.touched">
+      <div *ngIf="name.errors?.['required']">Name is required</div>
+      <div *ngIf="name.errors?.['minlength']">Minimum length is 5</div>
+      <div *ngIf="name.errors?.['pattern']">Only letters (a-z) are allowed</div>
+    </div>
+  
+    <label for="image">Image URL</label>
+    <input id="image" [(ngModel)]="product.image" name="image" #image="ngModel" />
+  
+    <label for="categoryId">Category ID</label>
+    <input
+      id="categoryId"
+      required
+      [(ngModel)]="product.categoryId"
+      name="categoryId"
+      #categoryId="ngModel"
+    />
+    <div *ngIf="categoryId.invalid && (categoryId.touched || categoryId.dirty)">
+      Category ID is required
+    </div>
+  
+    <label for="description">Description</label>
+    <input
+      id="description"
+      [(ngModel)]="product.description"
+      name="description"
+      #description="ngModel"
+    />
+  
+    <label for="price">Price</label>
+    <input
+      id="price"
+      required
+      pattern="^\d+(\.\d+)?$"
+      [(ngModel)]="product.price"
+      name="price"
+      #price="ngModel"
+    />
+    <div *ngIf="price.invalid && price.touched">
+      <div *ngIf="price.errors?.['required']">Price is required</div>
+      <div *ngIf="price.errors?.['pattern']">Price must be a number (e.g., 99 or 99.99)</div>
+    </div>
+  
+    <label for="brand">Brand</label>
+    <input id="brand" [(ngModel)]="product.brand" name="brand" #brand="ngModel" />
+  
+    <label for="promotion">Promotion</label>
+    <input
+      id="promotion"
+      max="100"
+      pattern="^(0|[1-9][0-9]?)$"
+      [(ngModel)]="product.promotion"
+      name="promotion"
+      #promotion="ngModel"
+    />
+    <div *ngIf="promotion.invalid && promotion.touched">
+      <div *ngIf="promotion.errors?.['pattern']">Promotion must be between 0 and 100</div>
+    </div>
+  
+    <button [disabled]="f.invalid" type="submit">Save</button>
+
+  </form>
+  
