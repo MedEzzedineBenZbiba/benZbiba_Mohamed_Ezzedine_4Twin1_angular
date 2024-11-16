@@ -1,4 +1,101 @@
-<form #f="ngForm" (ngSubmit)="save()">
+<!-- Reactive Form -->
+
+<form [formGroup] = "productForm">
+  <div>
+    <label>name</label>
+    <input type="text" formControlName="name" >
+    <div *ngIf="productForm.get('name')?.invalid && productForm.get('name')?.touched" >
+      <div *ngIf="productForm.get('name')?.hasError('required')" >
+        le nom est obligatoire
+      </div>
+      <div *ngIf="productForm.get('name')?.hasError('minlength')" >
+        Minimum 5 letters
+      </div>
+      <div *ngIf="productForm.get('name')?.hasError('pattern')" >
+        des lettres uniquements
+      </div>
+    </div>
+  </div>
+
+  <div>
+    <label>image</label>
+    <input type="text" formControlName="image" >
+  </div>
+
+  <div>
+    <label>category Id</label>
+    <input type="text" formControlName="categoryId" >
+    <div *ngIf="productForm.get('categoryId')?.invalid && productForm.get('categoryId')?.touched ">
+      <div *ngIf="productForm.get('categoryId')?.hasError('required')">
+        le champs categoryId est obligatoire
+      </div>
+    </div>
+  </div>
+
+  <div>
+  <label>description</label>
+  <input type="text" formControlName="description" >
+  </div>
+
+  <div>
+    <label>price</label>
+    <input type="text" formControlName="price" >
+    <div *ngIf="productForm.get('price')?.invalid && productForm.get('price')?.touched">
+      <div *ngIf="productForm.get('price')?.hasError('required')">
+        le champs price est obligatoire
+      </div>
+      <div *ngIf="productForm.get('price')?.hasError('pattern')">
+        eg xxx ou xxx.xxx 
+      </div>
+    </div>
+  </div>
+
+  <div>
+    <label>brand</label>
+     <input type="text" formControlName="brand" >
+  </div>
+
+  <div>
+    <label>promotion</label>
+    <input type="text" formControlName="promotion" >
+    <div *ngIf="productForm.get('promotion')?.invalid">
+      <div *ngIf="productForm.get('promotion')?.hasError('max')">
+        doit étre inferieur ou égale 100
+      </div>
+      <div *ngIf="productForm.get('promotion')?.hasError('pattern')">
+        doit etre des chiffres uniquements
+      </div>
+    </div>
+  </div>
+
+ <button [disabled]="productForm.invalid" type="submit" (click)="save()"> save </button>
+</form>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- Template driven form -->
+<!-- <form #f="ngForm" (ngSubmit)="save()">
     <label for="name">Name</label>
     <input
       id="name"
@@ -71,4 +168,4 @@
     <button [disabled]="f.invalid" type="submit">Save</button>
 
   </form>
-  
+   -->

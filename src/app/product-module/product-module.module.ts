@@ -6,7 +6,7 @@ import { ProductComponentComponent } from './product-component/product-component
 import { ProductsCategoryComponent } from './products-category/products-category.component';
 import { ProductsCategoryQPComponentComponent } from './products-category-qpcomponent/products-category-qpcomponent.component';
 import { FormProductComponenComponent } from './form-product-componen/form-product-componen.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -20,7 +20,8 @@ import { FormsModule } from '@angular/forms';
   imports: [
     CommonModule,
     ProductModuleRoutingModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ]
 })
 export class ProductModuleModule { }

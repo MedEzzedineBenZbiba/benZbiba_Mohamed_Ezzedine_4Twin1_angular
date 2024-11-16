@@ -37,6 +37,7 @@ import { ProviderModuleModule } from './provider-module/provider-module.module';
     BrowserModule,
     FormsModule,
     AppRoutingModule,
+ 
   ],
   providers: [],
   bootstrap: [AppComponent, HeaderComponent]
