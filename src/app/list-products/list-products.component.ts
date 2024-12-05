@@ -75,7 +75,7 @@ export class ListProductsComponent {
 
   getRequest(shortListEnvoyer : shortList) {
     this.shortlist.push(shortListEnvoyer);
-    alert("bonjour")
+    alert("added")
   }
 
 }
