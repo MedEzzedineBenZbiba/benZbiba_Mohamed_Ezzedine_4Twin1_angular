@@ -1,0 +1,11 @@
+<div class="row">
+<app-card
+  *ngFor="let product of listProducts"  class="col-md-4" style="margin-bottom: 20px" appHighlightDirective
+  [id]="product.id"
+  [title]="product.name"
+  [description]="product.description"
+  [image]="product.image"
+  [promotion]="product.promotion"
+  (requestedFromProduct)="getRequest($event)"
+></app-card>
+</div>

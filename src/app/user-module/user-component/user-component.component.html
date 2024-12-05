@@ -1,1 +1,15 @@
-<p>user-component works!</p>
+<table *ngFor="let user of users">
+    <td>
+        {{user.id}}
+    </td>
+    <td>
+        {{user.nom}}
+    </td>
+    <td>
+        {{user.age}}
+    </td>
+    <button (click)="deleteUser(user)">supprimer</button>
+    <button [routerLink]="['detail', user.id]">details</button>
+    <button ><a [routerLink]="['addUser', user.id]" >modifier</a></button>
+
+</table>

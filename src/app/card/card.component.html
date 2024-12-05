@@ -1,0 +1,16 @@
+
+
+    <!-- <div *ngIf="!title || category.title.toLowerCase().includes(title.toLowerCase())" class="col-md-4" style="margin-bottom: 20px;"> -->
+        <img (click)="showDescription(description)" [src]="image" [alt]="title" class="img-fluid h-50 w-75">
+        <h3>{{title | uppercase }}</h3>
+        <div>{{description}}</div>
+        <button class="btn btn-primary" *ngIf="available" [routerLink]='["/products"]' [queryParams]="{id: id}"> 
+            {{btText}}
+        </button>
+        <button [routerLink]="['details', id]">
+            voir détails
+        </button>
+        <span *ngIf="!available"> Catégorie non disponible </span>
+        <button (click)="sendDataToParent()">Add to short list</button>
+
+

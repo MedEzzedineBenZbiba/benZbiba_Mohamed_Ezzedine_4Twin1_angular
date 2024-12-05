@@ -1,0 +1,17 @@
+<form  [formGroup]="userForm">
+    <div>
+        <label>id</label>
+        <input type="text" formControlName="id" >
+    </div>
+    <div>
+        <label>Name</label>
+        <input type="text" formControlName="nom" >
+    </div>
+    <div>
+        <label>age</label>
+        <input type="text" formControlName="age" >
+    </div>
+    <button (click)="save()" type="submit">envoyer</button>
+    <!-- normalement kol formulaire wa7do juste 3al wa9t  -->
+    <button (click)="update()" type="submit">modifier</button>
+</form>

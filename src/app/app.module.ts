@@ -15,6 +15,9 @@ import { DetailsCategoryComponentComponent } from './details-category-component/
 import { UserModuleModule } from './user-module/user-module.module';
 import { ProductModuleModule } from './product-module/product-module.module';
 import { ProviderModuleModule } from './provider-module/provider-module.module';
+import { HttpClientModule } from '@angular/common/http';
+import { CardComponent } from './card/card.component';
+import { ListProductsComponent } from './list-products/list-products.component';
 
 
 
@@ -31,12 +34,16 @@ import { ProviderModuleModule } from './provider-module/provider-module.module';
     HighlightDirectiveDirective,
     NotFoundPageComponent,
     DetailsCategoryComponentComponent,
+    CardComponent,
+    ListProductsComponent,
   ],
 
   imports: [
     BrowserModule,
     FormsModule,
     AppRoutingModule,
+    HttpClientModule
+  
  
   ],
   providers: [],

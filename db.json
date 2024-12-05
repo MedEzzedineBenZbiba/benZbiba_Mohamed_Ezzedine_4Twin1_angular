@@ -1,0 +1,19 @@
+{
+  "users": [
+    {
+      "id": "1",
+      "nom": "faycel",
+      "age": "30"
+    },
+    {
+      "id": "Aut vel ad veniam u",
+      "nom": "Velit anim fugiat co",
+      "age": "Ratione sed quidem e"
+    },
+    {
+      "id": "Aut quod dolorem ess",
+      "nom": "Architecto unde dolo",
+      "age": "Voluptas voluptatem 10"
+    }
+  ]
+}
